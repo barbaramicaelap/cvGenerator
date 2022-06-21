@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/plantilla_1.css" />
+  </head>
+  <body>
+    <div th:fragment="plantilla_0" class="plantilla_1">
+      <div class="titulo">
+        <div class="contenedor">
+            <div class="NomAp" id="p-nombre"></div>
+          <div class="profesion"id="p-profesion"></div>
+        </div>
+      </div>
+      <div class="perfil">
+        <!--<div id="foto"></div>-->
+        <div class="datos">
+          <div class="contenedor" id="p-aboutMe">
+            <span class="title">SOBRE Mí</span>
+            <div class="linea"></div>
+            <div class="item">
+              <ul class="simple">
+                <li id="p-edad"></li>
+                <li id="p-pais"></li>
+                <li id="p-ciudad"></li>
+                <li id="p-direccion"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="contenedor" id="p-contacto">
+            <span class="title">CONTACTO</span>
+            <div class="linea"></div>
+            <div class="item">
+              <ul class="simple">
+                <li id="p-telefono"></li>
+                <li id="p-correo"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="contenedor" id="p-conocimiento">
+            <span class="title">CONOCIMIENTOS</span>
+            <div class="linea"></div>
+            <div class="item">
+              <ul class="lista" id="p-conocimientos">
+              </ul>
+            </div>
+          </div>
+          <div class="contenedor" id="p-idioma">
+            <span class="title">IDIOMAS</span>
+            <div class="linea"></div>
+            <div class="item">
+              <ul class="lista" id="p-idiomas">
+              </ul>
+            </div>
+          </div>
+          <div class="contenedor" id="p-aptitud">
+            <span class="title">Aptitudes</span>
+            <div class="linea"></div>
+            <div class="item">
+                <ul class="simple" id="p-aptitudes">
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="expForm">
+          <div class="contenedor">
+              <div class="items" id="p-resumen"></div>
+          </div>
+        <div class="contenedor" id="p-laboral">
+          <div class="title">EXPERIENCIA LABORAL</div>
+          <div class="linea"></div>
+          <div class="items">
+            <ul class="simple" id="p-trabajos">
+<!--              <li>
+                <div class="subtitle" ></div>
+                <div class="tiempo"></div>
+              </li>-->
+            </ul>
+          </div>
+        </div>
+        <div class="contenedor" id="p-academico">
+          <div class="title">FORMACION</div>
+          <div class="linea"></div>
+          <div class="items">
+            <ul class="simple" id="p-academicos">
+<!--              <li>
+                <div class="subtitle">Arquitecta</div>
+                <div class="tiempo">Algun lugar</div>
+              </li>-->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eggenerator</title>
+    <link rel="stylesheet" href="css/plantilla.css" />
+    
+  </head>
+  <body>
+    <header class="nav" th:fragment="header">
+        <div class="contenedor-logo">
+          <div class="contenedor-img">
+            <img
+              src="/img/logo-img.jpeg"
+              alt="imagen-logo"
+            />
+          </div>
+          <div class="contenedor-nombre">
+            <span class="yellow">¡</span>
+            <span class="yellow">E</span>
+            <span class="yellow">G</span>
+            <span class="yellow">G</span>
+            <span class="blue">E</span>
+            <span class="blue">N</span>
+            <span class="blue">E</span>
+            <span class="blue">R</span>
+            <span class="blue">A</span>
+            <span class="blue">T</span>
+            <span class="blue">O</span>
+            <span class="blue">R</span>
+            <span class="blue">!</span>
+          </div>
+        </div>
+        <div class="nav-main">
+        <div class="contenedor-menu">
+          
+          <ul>
+            <li><a th:href="@{/home}">Inicio</a></li>
+            <li><a th:href="@{/consejos}">Consejos</a></li>
+            <li sec:authorize="isAuthenticated() == false"><a th:href="@{/login}">Iniciar sesion</a></li>
+            <li sec:authorize="isAuthenticated()"><a th:href="@{/formulario}" sec:authentication="name">Iniciar sesion</a></li>
+            <li sec:authorize="isAuthenticated() == false"><a th:href="@{/registro}">Registrate</a></li>
+            <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Cerrar sesion</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+      <section th:fragment="fondo" class="fondo-cuadrados">
+            <section class="contenedor-cuadrados"id="cuadrados">
+                
+            </section>
+      
+    </section> 
+      
+        <footer th:fragment="footer" id="pie">
+            <div class="contenedor">
+                Copyright.
+                <a href="/">Términos</a>
+            </div>
+        </footer>
+  </body>
+  <script>
+    const colors = ['#06f5bdb3',
+      '#f8d951']
+
+    function createSquare(){
+      const section = document.querySelector('section#cuadrados');
+      const square = document.createElement('span');
+
+      var size = Math.random() *50;
+
+      square.style.width = 20 + size + 'px';
+      square.style.height = 20 + size + 'px';
+
+      square.style.top = Math.random() * innerHeight + 'px';
+      square.style.left = Math.random() * innerWidth + 'px';
+
+      const bg = colors[Math.floor(Math.random() * colors.length)];
+      square.style.background = bg;
+
+      section.appendChild(square);
+
+      setTimeout(()=>{
+        square.remove()
+      },5000);
+    }
+
+    setInterval(createSquare,150);
+  </script>
+</html>

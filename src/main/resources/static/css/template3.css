@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+:root {
+	--fuente: Arimo, sans-serif;
+	--tamanio-fuente-base: medium;
+	--tamanio-fuente-xx-grande: calc(1rem * 1.2 * 1.2 * 1.2);
+	--tamanio-fuente-x-grande: calc(1rem * 1.2 * 1.2);
+	--tamanio-fuente-grande: calc(1rem * 1.2);
+	--tamanio-fuente: 1rem;
+	--tamanio-fuente-pequenio: calc(1rem / 1.2);
+	--tamanio-fuente-x-pequenio: calc(1rem / 1.2 / 1.2);
+	--interlineado: 1.5;
+	--interlineado-alt: 1.3;
+	--espacio: 1rem;
+	--ancho-main: 70ex;
+	--ancho-contenedor: 19cm;
+}
+
+.plantilla6 *, *::before, *::after {
+	box-sizing: border-box;
+}
+.plantilla6 html:focus-within {
+	scroll-behavior: smooth;
+}
+body {
+	font: 1rem/var(--interlineado) var(--fuente);
+	text-rendering: optimizeSpeed;
+        min-height: 100vh;
+        background: #161616;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+@media screen {
+	body {
+		margin: 0;
+		
+	}
+}
+.dimension_plantilla6{
+    width: 105mm;
+    height: 148.5mm;
+    position: relative;
+}
+.plantilla6 h1, h2, h3, h4 {
+	line-height: var(--interlineado-alt);
+	margin: 0 0 calc(var(--espacio) / 2);
+}
+.plantilla6 p, figure, blockquote, ul, ol, dl {
+	margin: 0 0 var(--espacio);
+	padding: 0;
+}
+.plantilla6 a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+.plantilla6 input, button, textarea, select {
+	font: inherit;
+}
+.plantilla6 ul[role='list'], ol[role='list'] {
+	list-style: none;
+}
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+.plantilla6 .contenedor {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	max-width: var(--ancho-contenedor);
+}
+
+.plantilla6 #mainWrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+.plantilla6 #masthead {
+	flex: 1 0 100%
+}
+.plantilla6 #masthead h1 {
+	line-height: 1;
+	margin: var(--espacio) 0;
+}
+.plantilla6 #personales {
+	margin-right: var(--espacio);
+	flex: 1 0;
+}
+.plantilla6 #mainWrap > main {
+	padding-top: var(--espacio);
+	flex: 0 0 min(61.8%, var(--ancho-main))
+}
+@media screen {
+	#masthead {
+		padding: 0 var(--espacio);
+		color: white;
+		background-color: dodgerblue;
+	}
+	#personales {
+		background-color: gainsboro;
+		padding: var(--espacio);
+	}
+}
